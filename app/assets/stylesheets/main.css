@@ -1,0 +1,14 @@
+body {
+  font-family: 'Montserrat', sans-serif !important;
+  background-color: #F3F3F3 !important;
+}
+
+.input {
+  margin-top: 200px;
+}
+
+.logo {
+  height: 220px;
+  margin: 20px auto;
+  display: block;
+}

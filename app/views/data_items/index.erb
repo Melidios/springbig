@@ -1,0 +1,18 @@
+<div class="container input col-lg-6 col-12 col-md-7 m-auto">
+  <!-- Content here -->
+  <%= image_tag("springbig-logo.png", alt: "image", class: "logo") %>
+  <div class="container form mt-4">
+    <h1 class="text-center mt-4 mb-4">DOWNLOAD YOUR CSV FILE</h1>
+    <form class="mt-5">
+      <div class="form-group mt-4">
+        <label for="input">File Indentifier</label>
+        <input class="form-control" type="text" placeholder="Input indentifier">
+      </div>
+      <div class="form-group mt-4">
+        <label for="fileUpload">Choose CSV file</label>
+        <input type="file" class="form-control-file" id="fileUpload" accept=".csv">
+      </div>
+      <button type="submit" class="btn btn-primary custom mt-3">Submit</button>
+    </form>
+  </div>
+</div>
