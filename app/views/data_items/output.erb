@@ -1,0 +1,50 @@
+<div class="container input col-lg-6 col-12 col-md-7 m-auto">
+  <!-- Content here -->
+  <%= image_tag("springbig-logo.png", alt: "image", class: "logo") %>
+  <div class="container table mt-4">
+    <% unless processed_data_items.empty? %>
+      <h2 class="text-center mt-4 mb-4">Processed Items:</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">First Name</th>
+              <th scope="col">Last name</th>
+              <th scope="col">Phone number</th>
+              <th scope="col">Email</th>
+            </tr>
+          </thead>
+          <% processed_data_items.map do |item| %>
+            <tbody>
+              <tr>
+                <td><%= item.first %></td>
+                <td><%= item.last %></td>
+                <td><%= item.phone %></td>
+                <td><%= item.email %></td>
+              </tr>
+            </tbody>
+          <%end%>
+        </table>
+    <%end%>
+    <hr>
+    <% unless @result.empty?%> 
+      <h2 class="text-center mt-4 mb-4">While processing the CSV erros occured in:</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Row #</th>
+              <th scope="col">Error message</th>
+            </tr>
+          </thead>
+          <%@result.map do |r| %>
+            <tbody>
+              <tr>
+                <td><%= r["row"] %></td>
+                <td class="error-row"><%= r["message"] %></td>
+              </tr>
+            </tbody>
+          <%end%>
+        </table>
+      <%end%>
+  </div>
+  <%= link_to "Back", root_path, class: "btn btn-primary custom mt-3 mb-3"%>
+</div>
