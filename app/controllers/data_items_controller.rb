@@ -9,12 +9,14 @@ class DataItemsController < ApplicationController
 
   def create
     session[:file_name] = data_item_params[:file_name]
+    return unless session[:file_name].present?
+
     flash[:var] = ProcessCsvJob.call(data_item_params[:file], session[:file_name])
     redirect_to data_items_output_path
   end
 
   def output
-    @result = flash[:var]
+    @result = flash[:var] || []
   end
 
   private

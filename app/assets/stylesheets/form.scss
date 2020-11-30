@@ -22,3 +22,14 @@ form {
       border: 1px solid white !important;
     }
 }
+
+.hidden {
+  display: none;
+}
+.error {
+  color: red
+}
+
+.error-input {
+  border-color: red !important;
+}
